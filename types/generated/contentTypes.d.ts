@@ -362,50 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiCategoryCategory extends Schema.CollectionType {
-  collectionName: 'categories';
-  info: {
-    singularName: 'category';
-    pluralName: 'categories';
-    displayName: 'Scholarship';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Title: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        maxLength: 50;
-      }>;
-    Pictures: Attribute.Media<'images' | 'videos', true> & Attribute.Required;
-    slug: Attribute.UID<'api::category.category', 'Title'>;
-    Description: Attribute.Text & Attribute.Required;
-    Phone: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        minLength: 1;
-      }>;
-    Email: Attribute.String & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::category.category',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::category.category',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -832,6 +788,366 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiCategoryCategory extends Schema.CollectionType {
+  collectionName: 'categories';
+  info: {
+    singularName: 'category';
+    pluralName: 'categories';
+    displayName: 'Scholarship';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 50;
+      }>;
+    Pictures: Attribute.Media<'images' | 'videos', true> & Attribute.Required;
+    Description: Attribute.Text & Attribute.Required;
+    Offers: Attribute.Text & Attribute.Required;
+    Requirements: Attribute.Text & Attribute.Required;
+    Email: Attribute.Email & Attribute.Required & Attribute.Unique;
+    Phone: Attribute.BigInteger & Attribute.Required & Attribute.Unique;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::category.category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::category.category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHomepageHomepage extends Schema.SingleType {
+  collectionName: 'homepages';
+  info: {
+    singularName: 'homepage';
+    pluralName: 'homepages';
+    displayName: 'Homepage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    scholarships: Attribute.Relation<
+      'api::homepage.homepage',
+      'oneToMany',
+      'api::category.category'
+    >;
+    internships: Attribute.Relation<
+      'api::homepage.homepage',
+      'oneToMany',
+      'api::internship.internship'
+    >;
+    volunteerings: Attribute.Relation<
+      'api::homepage.homepage',
+      'oneToMany',
+      'api::volunteering.volunteering'
+    >;
+    uscholarships: Attribute.Relation<
+      'api::homepage.homepage',
+      'oneToMany',
+      'api::uscholarship.uscholarship'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::homepage.homepage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::homepage.homepage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiInternshipInternship extends Schema.CollectionType {
+  collectionName: 'internships';
+  info: {
+    singularName: 'internship';
+    pluralName: 'internships';
+    displayName: 'Internship';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String & Attribute.Required;
+    Description: Attribute.Text & Attribute.Required;
+    Photos: Attribute.Media<'images', true> & Attribute.Required;
+    Requirements: Attribute.Text & Attribute.Required;
+    Offers: Attribute.Text & Attribute.Required;
+    Email: Attribute.Email & Attribute.Required & Attribute.Unique;
+    Phone: Attribute.BigInteger & Attribute.Required & Attribute.Unique;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::internship.internship',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::internship.internship',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLibraryLibrary extends Schema.SingleType {
+  collectionName: 'libraries';
+  info: {
+    singularName: 'library';
+    pluralName: 'libraries';
+    displayName: 'Library';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    resources: Attribute.Relation<
+      'api::library.library',
+      'oneToMany',
+      'api::resource.resource'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::library.library',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::library.library',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiResourceResource extends Schema.CollectionType {
+  collectionName: 'resources';
+  info: {
+    singularName: 'resource';
+    pluralName: 'resources';
+    displayName: 'Resource';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String & Attribute.Required;
+    Resources: Attribute.Media<'images' | 'videos' | 'audios' | 'files', true> &
+      Attribute.Required;
+    Description: Attribute.Text & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::resource.resource',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::resource.resource',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiScholarshipScholarship extends Schema.SingleType {
+  collectionName: 'scholarships';
+  info: {
+    singularName: 'scholarship';
+    pluralName: 'scholarships';
+    displayName: 'Scholarship';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    scholarships: Attribute.Relation<
+      'api::scholarship.scholarship',
+      'oneToMany',
+      'api::category.category'
+    >;
+    uscholarships: Attribute.Relation<
+      'api::scholarship.scholarship',
+      'oneToMany',
+      'api::uscholarship.uscholarship'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::scholarship.scholarship',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::scholarship.scholarship',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiStudentStudent extends Schema.CollectionType {
+  collectionName: 'students';
+  info: {
+    singularName: 'student';
+    pluralName: 'students';
+    displayName: 'Student';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    FullName: Attribute.String & Attribute.Required;
+    Skills: Attribute.Enumeration<
+      [
+        'Investigaci\u00F3n exhaustiva',
+        'Excelencia acad\u00E9mica',
+        'Habilidades de liderazgo',
+        'Comunicaci\u00F3n efectiva',
+        'Pensamiento cr\u00EDtico y resoluci\u00F3n de problemas',
+        'Compromiso social',
+        'Creatividad y originalidad',
+        'Dominio de idiomas',
+        'Adaptabilidad',
+        'Pasi\u00F3n por el \u00E1rea de estudio'
+      ]
+    > &
+      Attribute.Required;
+    AboutMe: Attribute.Text & Attribute.Required;
+    City: Attribute.String & Attribute.Required;
+    Department: Attribute.String & Attribute.Required;
+    Email: Attribute.Email & Attribute.Required;
+    Phone: Attribute.BigInteger & Attribute.Required & Attribute.Unique;
+    Country: Attribute.String & Attribute.Required;
+    Age: Attribute.Integer & Attribute.Required;
+    School: Attribute.String & Attribute.Required;
+    Scores: Attribute.Media<'files', true> & Attribute.Required;
+    Grade: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::student.student',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::student.student',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiUscholarshipUscholarship extends Schema.CollectionType {
+  collectionName: 'uscholarships';
+  info: {
+    singularName: 'uscholarship';
+    pluralName: 'uscholarships';
+    displayName: 'Uscholarship';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String & Attribute.Required & Attribute.Unique;
+    Description: Attribute.Text & Attribute.Required;
+    Photos: Attribute.Media<'images', true> & Attribute.Required;
+    Offers: Attribute.Text & Attribute.Required;
+    Requirements: Attribute.Text;
+    Email: Attribute.Email & Attribute.Required & Attribute.Unique;
+    Phone: Attribute.BigInteger & Attribute.Required & Attribute.Unique;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::uscholarship.uscholarship',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::uscholarship.uscholarship',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiVolunteeringVolunteering extends Schema.CollectionType {
+  collectionName: 'volunteerings';
+  info: {
+    singularName: 'volunteering';
+    pluralName: 'volunteerings';
+    displayName: ' Volunteering';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String & Attribute.Required & Attribute.Unique;
+    Description: Attribute.Text & Attribute.Required;
+    Photos: Attribute.Media<'images', true> & Attribute.Required;
+    Requirements: Attribute.Text & Attribute.Required;
+    Offers: Attribute.Text & Attribute.Required;
+    Email: Attribute.Email & Attribute.Required & Attribute.Unique;
+    Phone: Attribute.BigInteger & Attribute.Required & Attribute.Unique;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::volunteering.volunteering',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::volunteering.volunteering',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -842,7 +1158,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::category.category': ApiCategoryCategory;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -851,6 +1166,15 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::category.category': ApiCategoryCategory;
+      'api::homepage.homepage': ApiHomepageHomepage;
+      'api::internship.internship': ApiInternshipInternship;
+      'api::library.library': ApiLibraryLibrary;
+      'api::resource.resource': ApiResourceResource;
+      'api::scholarship.scholarship': ApiScholarshipScholarship;
+      'api::student.student': ApiStudentStudent;
+      'api::uscholarship.uscholarship': ApiUscholarshipUscholarship;
+      'api::volunteering.volunteering': ApiVolunteeringVolunteering;
     }
   }
 }

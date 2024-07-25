@@ -1,0 +1,80 @@
+{
+  "kind": "collectionType",
+  "collectionName": "students",
+  "info": {
+    "singularName": "student",
+    "pluralName": "students",
+    "displayName": "Student"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "FullName": {
+      "type": "string",
+      "required": true
+    },
+    "Skills": {
+      "type": "enumeration",
+      "enum": [
+        "Investigación exhaustiva",
+        "Excelencia académica",
+        "Habilidades de liderazgo",
+        "Comunicación efectiva",
+        "Pensamiento crítico y resolución de problemas",
+        "Compromiso social",
+        "Creatividad y originalidad",
+        "Dominio de idiomas",
+        "Adaptabilidad",
+        "Pasión por el área de estudio"
+      ],
+      "required": true
+    },
+    "AboutMe": {
+      "type": "text",
+      "required": true
+    },
+    "City": {
+      "type": "string",
+      "required": true
+    },
+    "Department": {
+      "type": "string",
+      "required": true
+    },
+    "Email": {
+      "type": "email",
+      "required": true
+    },
+    "Phone": {
+      "type": "biginteger",
+      "unique": true,
+      "required": true
+    },
+    "Country": {
+      "type": "string",
+      "required": true
+    },
+    "Age": {
+      "type": "integer",
+      "required": true
+    },
+    "School": {
+      "type": "string",
+      "required": true
+    },
+    "Scores": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    },
+    "Grade": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

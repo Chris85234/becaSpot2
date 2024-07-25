@@ -1,33 +1,31 @@
 {
   "kind": "collectionType",
-  "collectionName": "categories",
+  "collectionName": "uscholarships",
   "info": {
-    "singularName": "category",
-    "pluralName": "categories",
-    "displayName": "Scholarship",
-    "description": ""
+    "singularName": "uscholarship",
+    "pluralName": "uscholarships",
+    "displayName": "Uscholarship"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
+    "Name": {
       "type": "string",
       "required": true,
-      "maxLength": 50
-    },
-    "Pictures": {
-      "type": "media",
-      "multiple": true,
-      "required": true,
-      "allowedTypes": [
-        "images",
-        "videos"
-      ]
+      "unique": true
     },
     "Description": {
       "type": "text",
+      "required": true
+    },
+    "Photos": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
       "required": true
     },
     "Offers": {
@@ -36,7 +34,7 @@
     },
     "Requirements": {
       "type": "text",
-      "required": true
+      "required": false
     },
     "Email": {
       "type": "email",

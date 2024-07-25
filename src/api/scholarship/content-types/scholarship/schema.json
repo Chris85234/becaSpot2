@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "scholarships",
+  "info": {
+    "singularName": "scholarship",
+    "pluralName": "scholarships",
+    "displayName": "Scholarship"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "scholarships": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::category.category"
+    },
+    "uscholarships": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::uscholarship.uscholarship"
+    }
+  }
+}

@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "categories",
+  "collectionName": "volunteerings",
   "info": {
-    "singularName": "category",
-    "pluralName": "categories",
-    "displayName": "Scholarship",
+    "singularName": "volunteering",
+    "pluralName": "volunteerings",
+    "displayName": " Volunteering",
     "description": ""
   },
   "options": {
@@ -12,29 +12,28 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
+    "Name": {
       "type": "string",
       "required": true,
-      "maxLength": 50
-    },
-    "Pictures": {
-      "type": "media",
-      "multiple": true,
-      "required": true,
-      "allowedTypes": [
-        "images",
-        "videos"
-      ]
+      "unique": true
     },
     "Description": {
       "type": "text",
       "required": true
     },
-    "Offers": {
+    "Photos": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Requirements": {
       "type": "text",
       "required": true
     },
-    "Requirements": {
+    "Offers": {
       "type": "text",
       "required": true
     },
