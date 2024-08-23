@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BecaSpot</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+<body>
+    <div class="btn-img-back">
+        <a id="backButton"><img src="arrow-left-solid.svg"/></a>
+    </div>
+    <header class="effect">
+        <div class="container">
+            <img src="logo2.png" alt="Logo" width="200px">
+        </div>
+        <nav>
+            <div class="nav-links">
+                <a href="javascript:history.go(-2)">Scholarships</a>
+                <a href="javascript:history.go(-1)">Volunteering</a>
+                <a href="#">Internship</a>
+            </div>
+        </nav>
+    </header>
+    <div class="container2">
+        <label class="btn-img">
+            <input type="file" id="profile-image-input" accept=".jpg, .jpeg, .png" />
+            <img src="profile logo.png" width="70px" height="70px">
+        </label>
+        <ol class="navbar">
+            <li>
+                <a href="index.html"><img src="user-logo.svg" width="20px" height="20px" alt="Profile Icon"><p>Profile</p></a>
+            </li>
+            <li>
+                <a href="Portfolio/index.html"><img src="briefcase-solid.svg" width="20px" height="20px" alt="Portfolio Icon"><p>Portfolio</p></a>
+            </li>
+            <li>
+                <a href="#"><img src="bell-solid.svg" width="20px" height="20px" alt="Notifications Icon"><p>Notifications</p></a>
+            </li>
+            <li>
+                <a href="#"><img src="star-solid.svg" width="20px" height="20px" alt="Favorites Icon"><p>Favorites</p></a>
+            </li>
+            <li>
+                <a href="#"><img src="cog-solid.svg" width="20px" height="20px" alt="Settings Icon"><p>Settings</p></a>
+            </li>
+        </ol>
+    </div>
+    <div class="card-user">
+        <div class="img-avatar">
+            <div class="avatar">
+                <label class="btn-img-avatar">
+                    <input type="file" id="profile-avatar-input" accept=".jpg, .jpeg, .png" />
+                    <img src="profile logo.png" width="70px" height="70px">
+                </label>
+            </div>
+            <div class="user-data">
+                <p>Name: <input class="name" type="text" id="name"/></p>
+                <p>Birthdate: <input class="birth" type="date" id="birth"/></p>
+                <p>NIE: <input class="nie" type="number" id="nie"/></p>
+                <p>Email: <input class="email" type="text" id="email"/></p>
+            </div>
+        </div>
+        <div class="about-user">
+            <h5>Name: <input class="name" type="text" id="name"/></h5>
+            <p><i class="fas fa-map-marker-alt"></i> El Salvador / La Libertad</p>
+            <p class="bio-user"> About me:
+                <textarea class="biography" id="description" ></textarea>
+            </p>
+            <p>Age: <input class="age" type="number" id="age"/></p>
+            <p>Email: <input class="email" type="text" id="email"/></p>
+            <div class="edit-li">
+                <a href="#" title="">Save changes</a>
+                <img src="edit.png"/>
+            </div>
+            <div class="files">
+                <p>Create portfolio<img src="add.png"/></p>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+    <script src="back.js"></script>
+</body>
+</html>

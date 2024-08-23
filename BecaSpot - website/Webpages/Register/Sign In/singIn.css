@@ -1,0 +1,113 @@
+body {
+    background: linear-gradient(#8A8AB0, #9EC8F6);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.container {
+    position: relative;
+    margin: 20px;
+}
+
+nav {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+nav img {
+    margin: 0 30px;
+    width: 250px; 
+    height: 250px; 
+}
+
+.rounded-image {
+    border-radius: 50%; 
+    object-fit: cover;
+    transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
+}
+
+nav img:hover {
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+    filter: brightness(1.2);
+}
+
+.content {
+    margin: 24px;
+    display: flex;
+    gap: 219px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.custom-shape-divider-top-1723935414 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: -1;
+}
+
+.custom-shape-divider-top-1723935414 svg {
+    position: relative;
+    display: flex;
+    width: calc(252% + 1.3px);
+    height: 296px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1723935414 .shape-fill {
+    fill: #CFC5FF;
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+}
+
+button img {
+    width: 40px; 
+    height: auto;
+    display: block;
+}
+
+button:hover img {
+    opacity: 0.8; 
+}
+
+
+.btn-img-back {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+}
+
+.btn-img-back img {
+    width: 40px; 
+    height: auto;
+    display: block;
+}
+
+.btn-img-back:hover img {
+    opacity: 0.8; 
+}

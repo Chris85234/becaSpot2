@@ -1,0 +1,47 @@
+body{
+    background-image: url('Spotlighting.jpg'); 
+    background-size: cover; 
+    margin: 0px 0;
+}
+
+header {
+    display: flex;
+    background-color: #000000;
+    padding: 8px 0;
+    justify-content:stretch;
+}
+
+.container {
+    width: 75%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 80px;
+}
+
+.nav-links a {
+    color: rgb(155, 155, 155);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 28px;
+    padding-top: 1rem;
+}
+
+nav ul {
+    list-style: none; 
+    padding: 0;
+    display: flex; 
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
