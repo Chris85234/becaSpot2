@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BecaSpot</title>
+    <link rel="stylesheet" href="hompage.css">
+</head>
+<body>
+    <header class="effect">
+        <div class="container">
+            <a href="/Webpages/Register/startInPage.html"><img src="Captura de pantalla 2024-09-03 140728.png" alt="Logo" width="250px"></a>
+        </div>
+        <nav>
+            <div class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="">Applicants</a>
+                <a href="DAP/home.html">DAP <img src="rocket_launch_24dp_FFDD00_FILL1_wght400_GRAD0_opsz24.svg" alt="DAP Icon"/></a>
+            </div>
+        </nav>
+    </header>
+    <div class="container2">
+        <label class="btn-img">
+            <input type="file" id="profile-image-input" accept=".jpg, .jpeg, .png" />
+            <img src="groups_24dp_5F6368_FILL1_wght400_GRAD0_opsz24.svg" width="70px" height="70px" alt="Profile Image">
+        </label>
+        <ol class="navbar">
+            <li>
+                <a href=""><img src="user-logo.svg" width="20px" height="20px" alt="Profile Icon"><p>Profile</p></a>
+            </li>
+            <li>
+                <a href="#"><img src="bookmark_24dp_FFFFFF_FILL1_wght400_GRAD0_opsz24.svg" width="20px" height="20px" alt="Inbox Icon"><p>Inbox</p></a>
+            </li>
+            <li>
+                <a href="#"><img src="cog-solid.svg" width="20px" height="20px" alt="Settings Icon"><p>Settings</p></a>
+            </li>
+        </ol>
+    </div>
+    <div class="page-content">
+        <div class="left-elements">
+            <div class="info-card">
+                <h2>Description</h2>
+                <p><strong>Schedule:</strong> Monday to Friday, 9:00 AM - 5:00 PM</p>
+                <p><strong>Address:</strong> Street 123, City, Country</p>
+                <p><strong>Contact:</strong> +123 456 7890</p>
+                <p><strong>Email:</strong> contact@scholarships.com</p>
+                <p><strong>Followers:</strong> 1,234</p>
+                <p><strong>Created:</strong> January, 2024</p>
+            </div>
+            <div class="add-new-post">
+                <input id="new-post" placeholder="What's new?">
+                <input id="new-link" placeholder="Add a link (optional)">
+                <input id="content-url" placeholder="Add an image or video URL (optional)">
+                <br><br><br>
+                <select id="content-type">
+                    <option value="image">Image</option>
+                    <option value="video">Video</option>
+                </select>
+            </div>
+        </div>
+        <div id="post-container" class="post-container">
+            <div id="post-card" class="post-card">
+                <div class="post-header">
+                    <img src="groups_24dp_5F6368_FILL1_wght400_GRAD0_opsz24.svg" alt="Profile Image" class="profile-image">
+                    <div class="user-info">
+                        <strong>Becas AECID</strong>
+                        <p class="post-date">August 29, 2024</p>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <p class="description">Applications Open EL Salvador</p>
+                    <p class="description">⭐️️ Now you can apply to Becas Walton ⭐️️️ The admission process to Salvadorian students is open. Click on becaswalton.com or wispweb.org</p>
+                    <img src="walton.jpg" alt="Post Image" class="post-media">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+    <script src="postThings.js">
+        const input = document.getElementById('new-post');
+const button = document.getElementById('add-post');
+const posts = document.getElementById('post-container');
+
+button.addEventListener('click', addPost);
+input.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    addPost();
+  }
+});
+
+function addPost() {
+  if (input.value) {
+
+    let newPost = document.createElement('div');
+    newPost.classList.add('post-card'); 
+
+    let postHeader = document.createElement('div');
+    postHeader.classList.add('post-header');
+
+    let profileImage = document.createElement('img');
+    profileImage.src = 'groups_24dp_5F6368_FILL1_wght400_GRAD0_opsz24.svg'; 
+    profileImage.alt = 'Profile Image';
+    profileImage.classList.add('profile-image');
+    postHeader.appendChild(profileImage);
+
+    let userInfo = document.createElement('div');
+    userInfo.classList.add('user-info');
+
+    let userName = document.createElement('strong');
+    userName.innerText = 'Becas AECID'; 
+    userInfo.appendChild(userName);
+
+    let postDate = document.createElement('p');
+    postDate.classList.add('post-date');
+    postDate.innerText = new Date().toLocaleDateString(); 
+    userInfo.appendChild(postDate);
+
+    postHeader.appendChild(userInfo);
+    newPost.appendChild(postHeader);
+
+    let postContent = document.createElement('div');
+    postContent.classList.add('post-content');
+
+    let description = document.createElement('p');
+    description.classList.add('description');
+    description.innerText = input.value;
+    postContent.appendChild(description);
+
+    let postImage = document.createElement('img');
+    postImage.src = 'path_to_image.jpg';
+    postImage.alt = 'Post Image';
+    postImage.classList.add('post-media');
+    postContent.appendChild(postImage);
+
+    newPost.appendChild(postContent);
+
+    posts.appendChild(newPost);
+    input.value = ''; 
+  } else {
+    alert('Please write something');
+  }
+}
+    </script>
+</body>
+</html>

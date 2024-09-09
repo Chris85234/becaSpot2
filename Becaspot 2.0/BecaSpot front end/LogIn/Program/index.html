@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="stylesheet" href="login.css"/>
+</head>
+<body>
+    <div class="btn-img-back">
+        <a id="backButton" href="javascript:history.back()"><img src="arrow-left-solid.svg" alt="Back"/></a>
+    </div>
+    <header class="effect">
+        <div class="container">
+            <img src="Captura de pantalla 2024-09-03 140728.png" alt="Logo" width="250px">
+        </div>
+    </header>
+    <div class="wrapper">
+        <h1>Log in</h1>
+        <div class="btn">
+            <button id="loginGoogle" class="btn-with-image">
+                <img src="icons8-logo-de-google-48.png" width="30px" alt="Google Icon" class="btn-icon"/>
+                <span class="btn-text">Log in with Google</span>
+            </button>
+            <button id="loginMicrosoft" class="btn-with-image">
+                <img src="icons8-microsoft-48.png" alt="Microsoft Icon" class="btn-icon"/>
+                <span class="btn-text">Log in with Microsoft</span>
+            </button>
+        </div>
+        <div class="container">
+            <h3>OR</h3>
+        </div>
+        <form id="login-form">
+            <div class="input-box">
+                <input type="text" id="org-name" name="org-name">
+                <label for="org-name">Organization</label>
+            </div>
+            <br><br>
+            <div class="input-box">
+                <input type="text" id="phone" name="phone" >
+                <label for="phone">Phone</label>
+            </div>
+            <br><br>
+            <div class="input-box">
+                <input type="password" id="password" name="password">
+                <label for="password">Password</label>
+            </div>
+            <br>
+        </form>
+        <a href="/Sign In/Program/Homepage/home.html"><button type="submit" class="btn-with-text">Log In</button></a>
+        <div class="register-link">
+            <h3>Don't have an account?
+                <nav><a href="/Sign In/Program/index.html">Register</a></nav>
+            </h3>
+        </div>
+    </div>
+    <script src="main.js"></script>
+    <script src="back-logIn.js"></script>
+</body>
+</html>

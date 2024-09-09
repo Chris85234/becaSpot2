@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BecaSpot</title>
+    <link rel="stylesheet" href="porfolio.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+<body>
+    <div class="btn-img-back">
+        <a id="backButton"><img src="arrow-left-solid.svg"/></a>
+    </div>
+    <header class="effect">
+        <div class="container">
+            <a href="/Webpages/Register/startInPage.html"><img src="Captura de pantalla 2024-09-03 140728.png" alt="Logo" width="250px"></a>
+        </div>
+        <nav>
+            <div class="nav-links">
+                <a href="/Sign In/User/Homepage/Scholarships/scholarships.html">Scholarships</a>
+                <a href="/Sign In/User/Homepage/Volunteering/volunteering.html">Volunteering</a>
+                <a href="/Sign In/User/Homepage/Internships/internships.html">Internship</a>
+                <a href="/Sign In/User/Homepage/Syllabus/syllabus.html">Resources</a>
+            </div>
+        </nav>
+    </header>
+    <div class="container2">
+        <label class="btn-img">
+            <input type="file" id="profile-image-input" accept=".jpg, .jpeg, .png" />
+            <img src="profile logo.png" width="70px" height="70px">
+        </label>
+        <ol class="navbar">
+            <li>
+                <a href="javascript:history.go(-1)"><img src="user-logo.svg" width="20px" height="20px" alt="Profile Icon"><p>Profile</p></a>
+            </li>
+            <li>
+                <a href="portfolio.html"><img src="briefcase-solid.svg" width="20px" height="20px" alt="Portfolio Icon"><p>Portfolio</p></a>
+            </li>
+            <li>
+                <a href="#"><img src="bell-solid.svg" width="20px" height="20px" alt="Notifications Icon"><p>Notifications</p></a>
+            </li>
+            <li>
+                <a href="#"><img src="star-solid.svg" width="20px" height="20px" alt="Favorites Icon"><p>Favorites</p></a>
+            </li>
+            <li>
+                <a href="#"><img src="cog-solid.svg" width="20px" height="20px" alt="Settings Icon"><p>Settings</p></a>
+            </li>
+        </ol>
+    </div>
+    <div class="card-user">
+        <div class="img-avatar">
+            <div class="avatar">
+                <label class="btn-img-avatar">
+                    <input type="file" id="profile-avatar-input" accept=".jpg, .jpeg, .png" />
+                    <img src="profile logo.png" width="70px" height="70px">
+                </label>
+            </div>
+            <div class="user-data">
+                <p>Name: <input class="name" type="text" id="name"/></p>
+                <p>Birthdate: <input class="birth" type="date" id="birth"/></p>
+                <p>NIE: <input class="nie" type="number" id="nie"/></p>
+                <p>Email: <input class="email" type="text" id="email"/></p>
+            </div>
+        </div>
+        <div class="about-user">
+        <div class="form-container">
+            <h1>Application Form</h1>
+        <div class="form-container">
+            <form id="applicationForm" action="/submit-application" method="post" enctype="multipart/form-data">
+                <fieldset>
+
+                <fieldset id="personal-info">
+                    <legend>1. Personal Information</legend>
+                    <label for="full-name">Full Name:</label>
+                    <input type="text" id="full-name" name="full_name" required>
+
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </fieldset>
+
+                <fieldset id="academic-info">
+                    <legend>2. Academic Information</legend>
+                    <label for="school">Current School/College:</label>
+                    <input type="text" id="school" name="school">
+
+                    <label for="grade">Grade/Year:</label>
+                    <input type="text" id="grade" name="grade">
+
+                    <label for="major">Major/Field of Study:</label>
+                    <input type="text" id="major" name="major">
+                </fieldset>
+
+                <fieldset>
+                    <legend>4. Academic Achievements</legend>
+                    <label for="gpa">Current scores:</label>
+                    <select id="gpa" name="gpa">
+                        <option id="gpa9.0+" value="9.0_or_higher">9.1 or higher</option>
+                        <option id="gpa8.0+" value="8.0_to_9.0">8.1 - 9.0</option>
+                        <option id="gpa7.0+" value="7.0_to_8.0">8.0 - 7.1</option>
+                        <option id="gpa7.0-" value="below_7.0">Below 7.0</option>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <legend>5. Extracurricular Activities</legend>
+                    <label>Which of the following extracurricular activities are you involved in? (Select all that apply)</label>
+                    <label for="sports">Sports</label>
+                    <input type="checkbox" id="sports" name="extracurricular[]" value="sports"><br>
+                    <label for="music">Music/Band</label>
+                    <input type="checkbox" id="music" name="extracurricular[]" value="music"><br>
+                    <label for="debate">Debate/Student Government</label>
+                    <input type="checkbox" id="debate" name="extracurricular[]" value="debate"><br>
+                    <label for="volunteer">Volunteer Work</label>
+                    <input type="checkbox" id="volunteer" name="extracurricular[]" value="volunteer"><br>
+                    <label for="club">Club Memberships</label>
+                    <input type="checkbox" id="club" name="extracurricular[]" value="club"><br>
+                    <label for="other">Other:</label>
+                    <input type="text" id="other-activity" name="other_activity">
+                </fieldset>
+
+                <fieldset>
+                    <legend>6. Personal Statement</legend>
+                    <label for="goals">Please describe your educational and career goals (250 words maximum):</label>
+                    <textarea id="goals" name="goals" rows="5" maxlength="250"></textarea>
+                    <label for="deserve">Why do you deserve this opportunity? (250 words maximum):</label>
+                    <textarea id="deserve" name="deserve" rows="5" maxlength="250"></textarea>
+                </fieldset>
+
+                <fieldset>
+                    <legend>7. Certification Uploads</legend>
+                    <label for="transcripts">Please upload your academic transcripts:</label>
+                    <input type="file" id="transcripts" name="transcripts" accept=".pdf, .jpg, .jpeg, .png"><br>
+                    <label for="certifications">Please upload any additional certifications:</label>
+                    <input type="file" id="certifications" name="certifications" accept=".pdf, .jpg, .jpeg, .png"><br>
+                    <label for="awards">Please upload any relevant awards or honors:</label>
+                    <input type="file" id="awards" name="awards" accept=".pdf, .jpg, .jpeg, .png">
+                </fieldset>
+
+                <fieldset>
+                    <legend>8. Experience and References</legend>
+                    <label for="experience">Please provide a brief description of any relevant experience (150 words maximum):</label>
+                    <textarea id="experience" name="experience" rows="4" maxlength="150"></textarea>
+                    <label for="reference1-name">Reference 1 Name:</label>
+                    <input type="text" id="reference1-name" name="reference1_name" required>
+                    <label for="reference1-relationship">Reference 1 Relationship:</label>
+                    <input type="text" id="reference1-relationship" name="reference1_relationship" required>
+                    <label for="reference1-email">Reference 1 Email:</label>
+                    <input type="email" id="reference1-email" name="reference1_email" required><br>
+                    <label for="reference2-name">Reference 2 Name:</label>
+                    <input type="text" id="reference2-name" name="reference2_name" required>
+                    <label for="reference2-relationship">Reference 2 Relationship:</label>
+                    <input type="text" id="reference2-relationship" name="reference2_relationship" required>
+                    <label for="reference2-email">Reference 2 Email:</label>
+                    <input type="email" id="reference2-email" name="reference2_email" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>9. Declaration</legend>
+                    <label>
+                        <input type="checkbox" id="declaration" name="declaration" required>
+                        I hereby declare that the information provided is accurate and complete to the best of my knowledge.
+                </fieldset>
+
+                <button type="submit">Submit Application</button>
+            </form>
+        </div>
+    </div>
+            <div id="message" style="color: green; margin-top: 10px;"></div>
+        </div>
+    </div>
+    <script src="form-portfolio.js"></script>
+    <script src="back-portfolio.js"></script>
+    <script src="main-portfolio.js"></script>
+</body>
+</html>
