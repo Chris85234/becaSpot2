@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BecaSpot</title>
+    <link rel="stylesheet" href="ues.css">
+</head>
+<style>
+body {  
+    background-size: cover;
+    margin: 0;
+    background-color: #e4e4e4;
+}
+
+header {
+    display: flex;
+    background-color: #323131;
+    padding: 8px 0;
+    justify-content: stretch;
+}
+
+.container {
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container img {
+    position: relative;
+    left: 30px;
+}
+
+/* Aquí eliminamos el subrayado de los enlaces dentro de .nav-links */
+.nav-links {
+    display: flex;
+    gap: 100px;
+    margin-right: 250px;
+}
+
+.nav-links a {
+    color: rgb(197, 197, 197);
+    text-decoration: none; /* Eliminar subrayado */
+    font-weight: bold;
+    font-size: 24px;
+    padding-top: 1.1rem;
+    transition: transform 0.5s;
+}
+
+.nav-links a:active {
+    transform: scale(1.1);
+    color: rgb(191, 135, 3);
+}
+
+.container2 {
+    width: 150px; 
+    min-height: 100%;
+    background-color: rgb(95, 94, 110);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    right: 0;
+    top: 0;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    height: 100vh; 
+    overflow-y: auto;
+}
+
+.container2 .btn-img {
+    margin-top: auto; 
+}
+
+.navbar {
+    width: 100%;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin-right: 0; 
+}
+
+.container2 .navbar li {
+    width: 100%;
+    display: flex; 
+    align-items: center; 
+    margin: 5px 0;
+}
+
+.container2 .navbar li a {
+    width: 130px;
+    display: flex; 
+    align-items: center; 
+    text-decoration: none; /* Eliminar subrayado */
+    text-transform: capitalize;
+    color: darkgray;
+    padding: 10px; 
+    border-radius: 10px;
+    transition: background 0.5s, color 0.5s, transform 0.5s;
+}
+
+.container2 .navbar li a:hover {
+    background-color: #6a7183;
+    color: #fff;
+    transform: scale(1.1); 
+}
+
+.container2 .navbar li a img {
+    width: 40px;
+    margin-right: 10px; 
+}
+
+.container2 .navbar li a p {
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+.btn-img {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    cursor: pointer;
+    margin-top: 20px; 
+}
+
+.btn-img input[type="file"] {
+    display: none; 
+}
+
+.btn-img img {
+    border-radius: 50%; 
+    border: 2px solid darkgrey;
+    background-color: #e9e9e9;
+}
+
+
+.topics {
+    background-color: #ddd3bd8c;
+    color: #332520;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 70%;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-left: 90px;
+    transition: background 0.5s, color 0.5s, transform 0.5s;
+}
+
+.topics:hover {
+    transform: scale(1.1);
+}
+
+.topics a {
+    text-decoration: none; 
+}
+
+.section-title + .topics {
+    margin-top: 10px;
+}
+
+img {
+    display: block; 
+    margin: 0 auto;
+}
+</style>
+<body>
+    <header class="effect">
+        <div class="container">
+            <a href="/Webpages/Register/startInPage.html"><img src="Captura de pantalla 2024-09-03 140728.png" alt="Logo" width="250px"></a>
+        </div>
+        <div class="nav-links">
+            <a href="/Sign In/User/Homepage/Scholarships/scholarships.html">Scholarships</a>
+            <a href="/Sign In/User/Homepage/Volunteering/volunteering.html">Volunteering</a>
+            <a href="/Sign In/User/Homepage/Internships/internships.html">Internship</a>
+            <a href="/Sign In/User/Homepage/Syllabus/syllabus.html">Resources</a>
+        </div>
+    </header>
+    <div class="container2">
+        <label class="btn-img">
+            <input type="file" id="profile-image-input" accept=".jpg, .jpeg, .png" />
+            <img src="profile logo.png" width="70px" height="70px">
+        </label>
+        <ol class="navbar">
+            <li>
+                <a href="/Sign In/User/Homepage/Profile/profile.html"><img src="user-logo.svg" width="20px" height="20px" alt="Profile Icon"><p>Profile</p></a>
+            </li>
+            <li>
+                <a href="/Sign In/User/Homepage/Profile/Portfolio/portfolio.html"><img src="briefcase-solid.svg" width="20px" height="20px" alt="Portfolio Icon"><p>Portfolio</p></a>
+            </li>
+            <li>
+                <a href="#"><img src="bell-solid.svg" width="20px" height="20px" alt="Notifications Icon"><p>Notifications</p></a>
+            </li>
+            <li>
+                <a href="#"><img src="star-solid.svg" width="20px" height="20px" alt="Favorites Icon"><p>Favorites</p></a>
+            </li>
+            <li>
+                <a href="/Sign In/User/Homepage/Syllabus/syllabus.html"><img src="briefcase-solid.svg" width="20px" height="20px" alt="Portfolio Icon"><p>Syllabus</p></a>
+            </li>
+            <li>
+                <a href="#"><img src="cog-solid.svg" width="20px" height="20px" alt="Settings Icon"><p>Settings</p></a>
+            </li>
+        </ol>
+    </div> 
+                <img class="img-sections" src="LogoMatematicas.png" width="1000px"/>
+                <br><br>
+                <a href="topic1/topic1.html"><div class="topics">1. Axiomas y Números Reales, Valor Absoluto y Operadores con signo, Exponentes</div></a>
+                <br>
+                <div class="topics">2. Exponentes y radicales</div> 
+                <br>
+                <div class="topics">3. Expresiones Algebraicas, Grado, Coeficiente, Operaciones con Polinomios</div>
+                <br>
+                <div class="topics">4. Productos y coeficientes notables, Teorema del Binomio</div>
+                <br>
+                <div class="topics">5. Factoreo</div>
+                <br>
+                <div class="topics">6. Ecuaciones lineales y cuadráticas</div>
+                <br>
+                <div class="topics">7. Logaritmos</div>
+                <br>
+                <div class="topics">8. Desigualdades</div>
+                <br>
+                <div class="topics">9. valor absoluto</div>
+                <br>
+                <div class="topics">10. Geometria</div>
+                <br>
+                <div class="topics">11. Areas</div> 
+                <br>
+                <div class="topics">12. volumen de un cuerpo</div>
+                <br>
+                <div class="topics">13. Igualdad de angulos</div>
+                <br>
+                <div class="topics">14. Conicas</div>
+                <br>
+                <div class="topics">15. Trigonometria, razones trigonometricas</div>
+                <br>
+                <div class="topics">16. Identidades Trigonometricas</div>
+                <br>
+                <div class="topics">17. Estadistica descriptiva y probabilidad</div>
+                <br>
+                <div class="topics">18. Medidas de posicion</div>
+                <br>
+                <div class="topics">19. Probabilidad</div> 
+                <br>
+                <div class="topics">20. Definiciones y propiedades de la probabilidad</div>
+                <br>
+                <div class="topics">21. Técnicas de Conteo y Probabilidad, Reglas del producto, Reglas de la suma, Permutaciones</div>
+                <br><br>
+
+                <img class="img-sections" src="unnamed.png" width="950px"/>
+                <br><br>
+                <div class="topics">1. Teoria de la literatura, funcion, poetica</div>
+                <br>
+                <div class="topics">2.Caracteristicas de la literatura clasica literaria, epica clasica, tragedia griega</div>
+                <br>
+                <div class="topics">3. Comunicacion Literaria - La edad media sociedad y cultuura</div>
+                <br>
+                <div class="topics">4. Literatura del siglo de oro español y la literatura del manierismo</div>
+                <br>
+                <div class="topics">5. Literatura del romanticismo y literatura del realismo</div>
+                <br>
+                <div class="topics">6. Literatura del siglo XX el teatro</div>
+                <br>
+                <div class="topics">7. Literatura salvadoreña contemporanea</div>
+                <br>
+                <div class="topics">8. La comunicacion humana. Elementos y funciones</div> 
+                <br>
+                <div class="topics">9. lenguaje, lengua y habla. fonemas, sonidos y letras</div>
+                <br>
+                <div class="topics">10. Las palabras. estructuras y clases</div>
+                <br>
+                <div class="topics">11. El sintagma. Oracion simple. concordancia entre sujeto y predicado</div>
+                <br>
+                <div class="topics">12. Oracion simple, compuesta y compleja, estructura de la oracion simple</div>
+                <br>
+                <div class="topics">13. Oraciones compuestas: Yuxtapuestas y coordinadas</div>
+                <br>
+                <div class="topics">14. La oración compleja: Subordinadas sustantivas, adjetivas y adverbiales</div> 
+                <br>
+                <div class="topics">15. Norma linguistica. Acentuacion</div>
+                <br>
+                <div class="topics">16. Origen del lenguaje, La comunicación versus la escritura, Teoría de la información</div>
+                <br>
+                <div class="topics">17. Modelo de la comunicacion</div>
+                <br>
+                <div class="topics">18. La noticias periodística. El reportaje periodístico</div>
+                <br>
+                <div class="topics">19. Los textos publicitarios</div>
+                <br>
+                <div class="topics">20. La expresión oral y escrita. La argumentación. El editorial periodístico</div>
+                <br>
+                <div class="topics">21. Lenguaje y literatura. La disertación, el debate y la tertulia</div>
+                <br>
+                <div class="topics">22. La ortografía. Las reglas ortográficas</div>
+                <br><br>
+                
+                <img class="img-sections" src="cropped-2.png" width="950px"/>
+                <br><br>
+                <div class="section-titles">EVOLUCION DE LA VIDA</div>
+                <br>
+                <div class="topics">1. Prólogo e introducción, Teorías sobre el origen de la vida</div>
+                <br>
+                <div class="topics">2. Continuación sobre el origen de la vida</div>
+                <br>
+                <div class="topics">3. Pruebas de la Evolución</div>
+                <br>
+                <div class="topics">4. Características y Funciones de los Seres Vivos</div>
+                <br>
+                
+                <div class="section-titles">LA CELULA </div>
+                <br>
+                <div class="topics">5. Definición, Características, Formas, Tamaños, Células procarióticas y eucaróticas, Célula animal, Célula vegetal</div>
+                <br>
+                <div class="topics">6. Membrana celular, Citoplasma, Citosol, Cito Esqueleto, Núcleo Celular, Ribosomas, Retículo Endoplasmático, Aparato de Golgi, Lisosoma, Vacuolas, Cloroplasto, Peroxisomas, Mitocondria, Pared Celular</div>
+                <br>
+                
+                <div class="section-titles">METABOLISMO CELULAR</div>
+                <br>
+                <div class="topics">7. Anabolismo, Catabolismo, Fotosínstesis, Fase clara, Fase oscura</div>
+                <br>
+                <div class="topics">8. Respiración anaerobia, Respiración aerobia</div>
+                <br>
+                <div class="topics">CICLO CELULAR Y DIVISION CELULAR</div>
+                <br>
+                <div class="topics">9. Interfase, División celular, Citocinesis</div>
+                <br>
+                <div class="topics">10. Meiosis, Gametogénesis, Clonación y Células Madre, Bioética</div>
+                <br>
+                
+                <div class="section-titles">GENÉTICA</div>
+                <br>
+                <div class="topics">11. Leyes mendelianas, Cruce monohíbrido</div>
+                <br>
+                <div class="topics">12. Cruce dihíbrido, Genética humana, Caracteres genéticos humanos, Autosomas y cromosomas sexuales</div>
+                <br>
+                <div class="topics">13. Herencia ligada al sexo, Caracteres ligados al sexo, Tipos sanguíneos, Anormalidades cromosómicas humanas</div>
+                <br>
+                
+                <div class="section-titles">REINOS DE LA NATURALEZA</div>
+                <br>
+                <div class="topics">14. Sistematica, Taxonomia</div>
+                <br>
+                <div class="topics">15. Dominio Eucariota</div>
+                <br>
+                <div class="topics">16. Clasificación de la zoología, Importancia de la zoología</div>
+                <br>
+
+                <div class="section-titles">ECOLOGIA</div> 
+                <br>
+                <div class="topics">17. Definición, Historia de surgimiento de ecología, Campo y objeto de estudio, La ecología es una ciencia interdisciplinar, Subdivisiones, Niveles de organización</div>
+                <br>
+                <div class="topics">18. Definición de ecosistema, Componentes del ecosistema, Tipos de ecosistemas, Ciclos biogeoquímicos</div>
+                <br>
+                <div class="topics">19. Poblaciones ecológicas, Comunidades ecológicas</div>
+                <br>
+                <div class="topics">20. Ecosistema</div>
+                <br><br>
+            
+                <img class="img-sections" src="quimica.png" width="950px"/>
+                <br><br>
+                <div class="topics">1. Importancia de la quimica</div>
+                <br>
+                <div class="topics">2. division de la quimica</div>
+                <br>
+                <div class="topics">3. fenomenos frecuentes en la naturaleza</div>
+                <br>
+                <div class="topics">4. propiedades de la materia</div>
+                <br>
+                <div class="topics">5. Propiedades quimicas de la materia</div>
+                <br>
+                <div class="topics">6. teoria Atomica</div>
+                <br>
+                <div class="topics">7. Tabla periodica</div>
+                <br>
+                <div class="topics">8. Quimica inorganica</div>
+                <br>
+                <div class="topics">9. Iones Poli Atomicos</div>
+                <br>
+                <div class="topics">10. Sistemas de Nomenclatura</div>
+                <br>
+                <div class="topics">11.Enlace quimico</div>
+                <br>
+                <div class="topics">12. Ecuaciones Quimicas</div>
+                <br>
+                <div class="topics">13. tipos de reacciones</div>
+                <br>
+    <script src="main-syllabus.js"></script>
+    <script src="activateButton-scholarships.js"></script>
+</body>
+</html>

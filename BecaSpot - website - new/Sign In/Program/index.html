@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn Program</title>
+    <link rel="stylesheet" href="signIn.css"/>
+</head>
+<body>
+    <header class="effect">
+        <div class="container">
+            <a href="/Webpages/Register/startInPage.html"><img src="Captura de pantalla 2024-09-03 140728.png" alt="Logo" width="250px"></a>
+        </div>
+    </header>
+    <div class="btn-img-back">
+        <a id="backButton"><img src="arrow-left-solid.svg"/></a>
+    </div>
+    <div class="custom-shape-divider-top-1723935414">
+        <div class="img"><img src="backround program.png" height="660px"/></div>
+        <div class="img"><img src="backround program.png" height="660px"/></div>
+    </div>
+        <div class="wrapper">
+            <h1>Sign In</h1>
+            <br><br>
+            <form id="verification-form" onsubmit="handleSubmit(event)">
+                <div class="input-box">
+                    <input type="text" id="org-name" name="org-name">
+                    <label for="org-name">Organization</label>
+                </div>
+                <br><br>
+                <div class="input-box">
+                    <input type="email" id="org-email" name="org-email">
+                    <label for="org-email">Email</label>
+                </div>
+                <br><br>
+                <div class="input-box">
+                    <input type="tel" id="org-phone" name="org-phone">
+                    <label for="org-phone">Phone</label>
+                </div>
+                <br><br>
+                <div class="input-box">
+                    <label for="org-address">Address</label>
+                    <br>
+                    <textarea id="org-address" name="org-address" rows="4"></textarea>
+                </div>
+                <br><br>
+                <div class="input-box">
+                    <input type="url" id="org-website" name="org-website">
+                    <label for="org-website">Website</label>
+                </div>
+                <br><br>
+                <div class="input-box">
+                    <input type="file" id="org-doc" name="org-doc" accept=".pdf,.doc,.docx">
+                    <label for="org-doc">Legal Documetation</label>
+                </div>
+                <br><br>
+                <div class="input-box">
+                    <input type="text" id="rep-name" name="rep-name">
+                    <label for="rep-name">Representative</label>
+                </div>
+                <br><br>
+                <div class="input-box">
+                    <input type="email" id="rep-email" name="rep-email">
+                    <label for="rep-email">Representative email</label>
+                </div>
+                <br><br>
+                <div class="input-box">
+                    <input type="tel" id="rep-phone" name="rep-phone">
+                    <label for="rep-phone">Representative phone</label>
+                </div>
+                <br>
+            </form>
+            <a href="/Sign In/Program/Homepage/home.html"><button type="submit" class="btn-with-text">Sign In</button></a>
+        </div>
+        <script src="main.js"></script>
+</body>
+</html>
